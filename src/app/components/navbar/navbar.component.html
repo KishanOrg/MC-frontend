@@ -1,0 +1,28 @@
+<p>
+  <mat-toolbar>
+    <a [routerLink]="'/'" class="color-white" mat-icon-button>
+      <mat-icon>menu_book</mat-icon>
+    </a>
+    <span>
+      <a [routerLink]="'/'" class="color-white">
+        Multiple Choice
+      </a>
+    </span>
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedIn" [routerLink]="'/login'" style="color: white">
+      Login
+    </a>
+    <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" class="mx-4" style="color: white">
+      Register
+    </a>
+
+    <a *ngIf="isLoggedIn && user" class="mx-4" style="color: white">
+      {{user.username}}
+    </a>
+
+    <a (click)="logout()" *ngIf="isLoggedIn && user" class="mx-4" style="color: white">
+      Logout
+    </a>
+
+  </mat-toolbar>
+</p>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-4">
+            <mat-card class="my-5">
+                <div class="text-center">
+                    <img class="img-fluid" src="../../../assets/img/logo1.png" width="200" height="200" alt="logo">
+                </div>
+
+                <h1 class="text-center">Login Here !!</h1>
+                <!-- {{loginData | json}} -->
+                <form (ngSubmit)="formSubmit()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input [(ngModel)]="loginData.username"  required name="username" matInput
+                            placeholder="User Name">
+                        <mat-hint>Username must be unique</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>User Password</mat-label>
+                        <input [(ngModel)]="loginData.password"  type='password' required name="password"
+                            matInput placeholder="User Password">
+                    </mat-form-field>
+                    <div class="text-center">
+                        <button mat-raised-button color="primary" type="submit">Submit</button>
+                        <button class="mx-3" mat-raised-button color="warn" type="reset">Reset</button>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

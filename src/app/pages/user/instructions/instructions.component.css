@@ -1,0 +1,8 @@
+.bg-blue {
+    background: blue;
+}
+
+.header-image {
+    background-image: url("../../../../assets/img/instructions.png");
+    background-size: cover;
+}

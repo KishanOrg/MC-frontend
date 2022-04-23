@@ -1,0 +1,67 @@
+<mat-card class="my-2 bg-custom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8  my-1">
+                <h1>View Quiz</h1>
+            </div>
+            <div class="col-md-4 row-right  my-1 px-1">
+                <button mat-raised-button routerLink="/admin/add-quiz/" color="primary">Add New Quiz</button>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<mat-card class="my-2" *ngFor="let q of quizzes">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>                       
+                    <mat-card-title>
+                        {{q.title}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        {{q.category.title}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        {{q.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button [routerLink]="'/admin/quiz/' + q.qId" class="mt-1" mat-raised-button
+                        color="accent">
+                        Update
+                    </button>
+                    <button mat-raised-button [routerLink]="'/admin/view-questions/'+q.qId+'/'+q.title" color="primary">Questions</button>
+                    <button mat-mini-fab (click)="deleteQuiz(q.qId)" color="warn">
+                        <mat-icon matSuffix>delete</mat-icon>
+                    </button> 
+                </mat-card-actions>
+            </div>
+            <div class="col-md-3 font-red">
+                <div class="row row-right"> 
+                    <h3>Attempt :{{q.maxMarks}}</h3>
+                </div>
+                <div class="row row-right"> 
+                    <h3>Active :{{q.active}}</h3>
+                </div>
+                <div class="row row-right"> 
+                    <h3>Marks :{{q.maxMarks}}</h3>
+                </div>
+                <div class="row row-right"> 
+                    <h3>Questions :{{q.numOfQsn}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card *ngIf = "quizzes.length == 0">
+    <mat-card-header>
+        <div mat-card-avatar class="cover-image"></div>
+        <mat-card-title>
+            <h1>No Categories to show.</h1>
+        </mat-card-title>
+    </mat-card-header>
+</mat-card>

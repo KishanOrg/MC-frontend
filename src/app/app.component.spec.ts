@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Pariksha-Frontend'`, () => {
+  it(`should have as title 'Pariksha'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Pariksha-Frontend');
+    expect(app.title).toEqual('Pariksha');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Pariksha-Frontend app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Pariksha app is running!');
   });
 });

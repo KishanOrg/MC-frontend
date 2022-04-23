@@ -1,0 +1,10 @@
+.row-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cover-image {
+    background-image: url("../../../../assets/img/fuel.png");
+    background-size: cover;
+  }
+

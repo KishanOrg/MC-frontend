@@ -1,0 +1,13 @@
+.fc-red {
+    color: rgb(255, 100, 100);
+    font-weight: 500;
+}
+
+.w100 {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+

@@ -1,0 +1,36 @@
+<mat-card class="my-2 bg-custom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>All Categories</h1>
+            </div>
+            <div class="col-md-4 row-right  my-1 px-1">
+                <button routerLink = "/admin/add-category" mat-raised-button color = "primary">Add New Category</button>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<mat-card *ngIf = "categories.length != 0" >
+    <mat-list>
+        <mat-list-item *ngFor="let c of categories">
+            <mat-icon mat-list-icon>category</mat-icon>
+            <!-- {{c | json}} -->
+            <div mat-line><h3 class="fw-bold">{{ c.title }}</h3></div>
+            <div mat-line>{{ c.description }}</div>
+            
+            <button mat-mini-fab [routerLink] = "'/admin/update-category/' + c.cid" color = "warn"><mat-icon  matSuffix>construction</mat-icon></button>
+            <button class="ml-2" mat-mini-fab (click) = "deleteCategory(c.cid)" color = "warn"><mat-icon  matSuffix>delete</mat-icon></button>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</mat-card>
+
+<mat-card *ngIf = "categories.length == 0">
+    <mat-card-header>
+        <div mat-card-avatar class="cover-image"></div>
+        <mat-card-title>
+            <h1>No Categories to show.</h1>
+        </mat-card-title>
+    </mat-card-header>
+</mat-card>

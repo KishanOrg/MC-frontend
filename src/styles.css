@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html,
+body {
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+    
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-center{
+    text-align: center;
+}
+
+:root {
+    --white : #FFF;
+}
+
+.row-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.bg-custom {
+    background-color: rgba(154, 203, 255, 0.5);
+}
+
+.bg-sidebar {
+    background-color: rgba(255, 77, 77, 0.4);
+}
+
+.bg-option {
+    background-color: #f5f5f5;
+    margin : 0 0 15px 0;
+    padding: 10px 0 0 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+button {
+    max-height: 50px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

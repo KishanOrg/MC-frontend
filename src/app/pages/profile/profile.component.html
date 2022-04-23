@@ -1,0 +1,51 @@
+<mat-card class="my-2 bg-custom">
+     <h1>Your Profile Details1</h1>
+</mat-card>
+
+<mat-card>
+    <mat-card-content>
+        <div class="container">
+            <div class="container text-center">
+                <img 
+                src="../../../assets/img/kishan.jpeg" 
+                alt="Profile Image"
+                class="profile-image">
+                <h1 class="mt-2">Kishan Kandu</h1>
+                <!-- {{user | json}} -->
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <table class="table text-center">
+                        <tr>
+                            <td>Username</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>User Id</td>
+                            <td>{{user.id}}</td>
+                        </tr>
+                        <tr *ngIf = "user.Phone">
+                            <td>Phone</td>
+                            <td>{{user.Phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>{{user.authorities[0].authority}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{user.enabled?"ACTIVE":"NOT ACTIVE"}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </mat-card-content>
+    <div class="text-center">
+        <mat-card-actions >
+            <button class = "mx-3" mat-raised-button color = "primary">Update</button>
+            <button mat-raised-button color = "secondary" >SHARE</button>
+          </mat-card-actions>
+    </div>
+</mat-card>

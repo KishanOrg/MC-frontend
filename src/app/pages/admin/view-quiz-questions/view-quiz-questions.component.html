@@ -1,0 +1,86 @@
+<mat-card class="my-2 bg-custom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8  my-1">
+                <h1>Questions of {{title}}</h1>
+            </div>
+            <div class="col-md-4 row-right">
+                <button mat-raised-button [routerLink]="'/admin/add-questions/'+qId +'/'+title" color="primary">Add New Question</button>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<ng-container *ngIf = "questions.length != 0">
+    <mat-card *ngFor="let q of questions; let i = index"  class="mb-2" >
+        <mat-card-content>
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-md-10">
+                        <h2>
+                            <b>Q{{i + 1}}) &nbsp; &nbsp;</b><p [innerHTML] ="q.content"></p>
+                        </h2>
+                    </div>
+                    <div class="col-md-2 row-right">
+                        <button class="mx-2" [routerLink] ="'/admin/update-question/' + q.quesId" mat-mini-fab color = "warn"><mat-icon matSuffix>construction</mat-icon></button>
+                        <button (click) = "deleteQuestion(q.quesId)" mat-mini-fab color = "warn"><mat-icon matSuffix>delete</mat-icon></button>
+                        
+                    </div>
+                </div>
+            </div>
+            <mat-divider class="bg-blue"></mat-divider> <br>
+            <div class="container">
+                <div class="row justify-content-around">
+                    <div class="col-md-5 bg-option">
+                        <h3>
+                            <p>
+                                <b>A)</b>&nbsp;{{q.option1}}
+                            </p>
+                        </h3>
+                    </div>
+                    <div class="col-md-5  bg-option">
+                        <h3>
+                            <p>
+                                <b>B)</b>&nbsp;{{q.option2}}
+                            </p>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-md-5 bg-option">
+                        <h3>
+                            <p>
+                                <b>C)</b>&nbsp;{{q.option3}}
+                            </p>
+                        </h3>
+                    </div>
+                    <div class="col-md-5  bg-option">
+                        <h3>
+                            <p>
+                                <b>D)</b>&nbsp;{{q.option4}}
+                            </p>
+                        </h3>
+                    </div>
+                </div>
+                <mat-divider class="bg-blue" [inset]="true"></mat-divider>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 bg-option mt-3">
+                        <h3>
+                            <p>
+                                <b>Correct Answer :</b> &nbsp; {{q.answer}}
+                            </p>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+<mat-card *ngIf = "questions.length == 0">
+    <mat-card-header>
+        <div mat-card-avatar class="cover-image"></div>
+        <mat-card-title>
+            <h1>No Question to show.</h1>
+        </mat-card-title>
+    </mat-card-header>
+</mat-card>

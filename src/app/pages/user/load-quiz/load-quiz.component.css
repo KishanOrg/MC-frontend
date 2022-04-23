@@ -1,0 +1,14 @@
+.truncate {
+  width: auto;
+  height: 40px;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.example-header-image {
+  background-image: url('../../../../assets/img/choose.png');
+  background-size: cover;
+}
+
+
